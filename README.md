@@ -3,10 +3,13 @@
 ##Project Folder:
 
 ChefShare/
-|__ server.js
-|
-|__ data/
-|   |__ users.json
-|   |__ recipes.json
-|
-|__ public/
+├── server.js           
+├── data/
+│   ├── users.json     
+│   └── recipes.json    
+└── public/              
+    ├── index.html      
+    ├── css/
+    │   └── style.css   
+    └── js/
+        └── main.js   
