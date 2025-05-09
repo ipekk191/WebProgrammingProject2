@@ -7,36 +7,43 @@
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
- <form action:"#" class:"login-form">
+  <form action="#" class="login-form" id="loginForm">
     <h1 class="login-title">Login</h1>
 
-    <!-- Kullanıcı Kayıt Formu -->
     <div class="input-box">
-      <i class='bx bxs-user'></i>
-      <input type ="text" placeholder="Username">
+      <input type="text" name="username" placeholder="Username" required />
     </div>
 
     <div class="input-box">
-      <i class='bx bxs-alt'></i>
-      <input type ="password" placeholder="Password">
+      <input type="password" name="password" placeholder="Password" required />
     </div>
 
     <div class="remember-forget-box">
-      <label class='remember'>
-      <input type ="checkbox" placeholder="remember">
-      Remember me
+      <label class="remember">
+        <input type="checkbox" /> Remember me
       </label>
       <a href="#">Forgot Password?</a>
     </div>
 
-    <button class="login-btn">Login</button>
+    <button type="submit" class="login-btn">Login</button>
 
-     <p class="register">
-      Don't have an account?
-      <a href="#">Register</a>
+    <p class="register">
+      Don't have an account? <a href="#" id="showRegister">Register</a>
     </p>
-</form>
-    
-    
+  </form>
+
+  <!-- Register Modal -->
+  <div class="register-modal" id="registerModal">
+    <form id="registerForm" class="register-form">
+      <h2>Register</h2>
+      <input type="text" name="regName" placeholder="Name" required />
+      <input type="email" name="regEmail" placeholder="Email" required />
+      <input type="password" name="regPassword" placeholder="Password" required />
+      <button type="submit">Register</button>
+      <p><a href="#" id="closeRegister">Close</a></p>
+    </form>
+  </div>
+
+  <script src="script.js"></script>
 </body>
 </html>

@@ -1,4 +1,33 @@
 // Kullanıcı kayıt formunu dinle
+// Login butonuna tıklanınca yemek sayfasına yönlendir
+document.getElementById("loginForm").addEventListener("submit", function (e) {
+  e.preventDefault();
+
+  // Burada istersen kullanıcı adı/şifre kontrolü de ekleyebilirsin
+
+  // Login başarılıysa yönlendir
+  window.location.href = "recipes.html"; // yemek sayfası
+});
+
+// Register bağlantısı modalı açar
+document.getElementById("showRegister").addEventListener("click", function (e) {
+  e.preventDefault();
+  document.getElementById("registerModal").style.display = "flex";
+});
+
+// Modal kapat
+document.getElementById("closeRegister").addEventListener("click", function (e) {
+  e.preventDefault();
+  document.getElementById("registerModal").style.display = "none";
+});
+
+// Register işlemi (örnek veri alma)
+document.getElementById("registerForm").addEventListener("submit", function (e) {
+  e.preventDefault();
+  alert("Registration successful!");
+  document.getElementById("registerModal").style.display = "none";
+});
+
 document.getElementById('registerForm').addEventListener('submit', async (e) => {
     e.preventDefault();
   
