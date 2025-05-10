@@ -1,0 +1,137 @@
+/* Temel Ayarlar */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  background: #121212; /* Koyu arka plan */
+  color: #f1f1f1;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+h1 {
+  text-align: center;
+  font-size: 36px;
+  margin-bottom: 30px;
+  color: #f1f1f1;
+}
+
+/* Navbar */
+.navbar {
+  background: #1f1f1f;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 30px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+}
+
+.navbar .logo {
+  font-size: 30px;
+  font-weight: bold;
+  color: #f44336;
+}
+
+.search-container {
+  position: relative;
+}
+
+.search-bar {
+  padding: 10px;
+  border-radius: 20px;
+  border: 1px solid #444;
+  background: #333;
+  color: white;
+  font-size: 16px;
+  width: 300px;
+  transition: all 0.3s ease;
+}
+
+.search-bar::placeholder {
+  color: #bbb;
+}
+
+.search-bar:focus {
+  outline: none;
+  background: #444;
+  border-color: #f44336;
+}
+
+/* Tariflerin Listelendiği Alan */
+.recipes-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+  padding: 0 30px;
+  margin-top: 40px;
+}
+
+/* Tarif Kartları */
+.recipe-card {
+  background: #1e1e1e;
+  border-radius: 15px;
+  overflow: hidden;
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+  text-align: center;
+  padding: 20px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.recipe-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+}
+
+.recipe-card img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 10px;
+  transition: all 0.3s ease;
+}
+
+.recipe-card:hover img {
+  transform: scale(1.05);
+}
+
+.recipe-card h3 {
+  font-size: 22px;
+  margin: 15px 0;
+  color: #f44336;
+}
+
+.recipe-card p {
+  font-size: 16px;
+  color: #bbb;
+}
+
+.recipe-card a {
+  display: inline-block;
+  margin-top: 15px;
+  padding: 10px 20px;
+  background-color: #2f9cf4;
+  color: white;
+  text-decoration: none;
+  border-radius: 25px;
+  font-weight: bold;
+  transition: background-color 0.3s ease;
+}
+
+.recipe-card a:hover {
+  background-color: #0b87ec;
+}
+
+/* Footer */
+.footer {
+  background: #1f1f1f;
+  padding: 20px;
+  text-align: center;
+  color: #bbb;
+  margin-top: 50px;
+}
