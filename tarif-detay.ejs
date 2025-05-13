@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8">
+  <title><%= tarif.ad %></title>
+</head>
+<body>
+  <h1><%= tarif.ad %></h1>
+  <img src="<%= tarif.gorsel %>" alt="<%= tarif.ad %>" width="300">
+  <p><%= tarif.aciklama %></p>
+
+  <h3>Malzemeler</h3>
+  <ul>
+    <% tarif.malzemeler.forEach(function(malzeme) { %>
+      <li><%= malzeme %></li>
+    <% }); %>
+  </ul>
+
+  <h3>Yapılışı</h3>
+  <p><%= tarif.yapilis %></p>
+
+  <a href="/">Anasayfaya dön</a>
+</body>
+</html>
+
