@@ -53,3 +53,20 @@ function searchRecipes() {
     }
   });
 }
+fetch('/tarifler.json')
+  .then(res => res.json())
+  .then(data => {
+    const container = document.getElementById('tarif-container');
+    data.forEach(tarif => {
+      const card = document.createElement('div');
+      card.className = 'tarif-card';
+      card.innerHTML = `
+        <h3>${tarif.ad}</h3>
+        <img src="${tarif.gorsel}" alt="${tarif.ad}">
+      `;
+      card.addEventListener('click', () => {
+        window.location.href = `/tarif/${tarif.id}`;
+      });
+      container.appendChild(card);
+    });
+  });
