@@ -2,60 +2,344 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Yemek Tarifleri</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Food Recipes</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
   <link rel="stylesheet" href="recipes.css" />
+  <style>
+    /* Temel Ayarlar */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: #f5f5f5;
+      color: #333;
+      overflow-x: hidden;
+    }
+
+    
+
+    /* Navbar Stilleri */
+    .navbar {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      background: #fff;
+      display: flex;
+      align-items: center;
+      padding: 15px 25px;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+      z-index: 1000;
+    }
+
+    .sidebar-toggle {
+      background: none;
+      border: none;
+      font-size: 20px;
+      cursor: pointer;
+      margin-right: 20px;
+      color: #333;
+    }
+
+    .logo {
+      font-size: 22px;
+      font-weight: 700;
+      color: #ff6b6b;
+      margin-right: auto;
+    }
+
+    .search-bar {
+      padding: 8px 15px;
+      border-radius: 20px;
+      border: 1px solid #ddd;
+      width: 250px;
+      margin-right: 20px;
+      transition: all 0.3s;
+    }
+
+    .search-bar:focus {
+      outline: none;
+      border-color: #ff6b6b;
+      width: 300px;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 20px;
+    }
+
+    .nav-links a {
+      color: #555;
+      text-decoration: none;
+      font-weight: 500;
+      transition: color 0.3s;
+    }
+
+    .nav-links a:hover {
+      color: #ff6b6b;
+    }
+
+    /* Sidebar Stilleri */
+    .sidebar {
+      position: fixed;
+      top: 0;
+      left: -250px;
+      width: 250px;
+      height: 100%;
+      background: #fff;
+      box-shadow: 2px 0 10px rgba(0,0,0,0.1);
+      transition: all 0.3s ease;
+      z-index: 999;
+      padding-top: 70px;
+    }
+
+    .sidebar.active {
+      left: 0;
+    }
+
+    .side-nav ul {
+      list-style: none;
+    }
+
+    .side-nav li {
+      padding: 12px 20px;
+      border-bottom: 1px solid #f0f0f0;
+      transition: all 0.3s;
+    }
+
+    .side-nav li:hover {
+      background: #f9f9f9;
+    }
+
+    .side-nav a {
+      color: #555;
+      text-decoration: none;
+      display: flex;
+      align-items: center;
+    }
+
+    .side-nav i {
+      margin-right: 10px;
+      width: 20px;
+      text-align: center;
+    }
+
+    /* Ana İçerik */
+    .content {
+      padding: 100px 30px 30px;
+      transition: all 0.3s ease;
+      margin-left:0;
+    }
+
+ .content.sidebar-active {
+      margin-left: 250px;
+    }
+    h1 {
+      text-align: center;
+      margin-bottom: 30px;
+      color: #333;
+    }
+
+    /* Tarif Kartları */
+    .recipes-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+      gap: 25px;
+      margin-top: 30px;
+    }
+
+    .recipe-card {
+      background: #fff;
+      border-radius: 10px;
+      overflow: hidden;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+
+    .recipe-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+    }
+
+    .recipe-card img {
+      width: 100%;
+      height: 180px;
+      object-fit: cover;
+    }
+
+    .recipe-card h3 {
+      padding: 15px;
+      font-size: 18px;
+      color: #ff6b6b;
+    }
+
+    .recipe-card p {
+      padding: 0 15px 15px;
+      color: #666;
+      font-size: 14px;
+    }
+
+    .recipe-card a {
+      display: inline-block;
+      margin: 0 15px 15px;
+      padding: 8px 20px;
+      background: #ff6b6b;
+      color: white;
+      text-decoration: none;
+      border-radius: 5px;
+      font-size: 14px;
+      transition: background 0.3s;
+    }
+
+    .recipe-card a:hover {
+      background: #ff5252;
+    }
+
+    /* Footer */
+    .footer {
+      background: #fff;
+      padding: 20px;
+      text-align: center;
+      color: #666;
+      margin-top: 30px;
+      box-shadow: 0 -2px 10px rgba(0,0,0,0.1);
+      transition:all 0.3s ease;
+    }
+    .footer.sidebar-active {
+      margin-left: 250px;
+    }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+      .search-bar {
+        width: 180px;
+      }
+      
+      .search-bar:focus {
+        width: 220px;
+      }
+      .nav-links {
+        display: none;
+      }
+      .content, .content.sidebar-active {
+        padding: 100px 15px 15px;
+        margin-left: 0 !important;
+      }
+      
+      .footer, .footer.sidebar-active {
+        margin-left: 0 !important;
+      }
+    }
+    
+  </style>
 </head>
 <body>
-  <!-- Üst Menü -->
-<header class="navbar">
-  <div class="logo">YemekTarifim</div>
-  <input type="text" id="search-bar" placeholder="Tarif ara..." class="search-bar" onkeyup="searchRecipes()" />
-  <div class="nav-links">
-    <a href="tarif-ekle.html">Tarif Ekle</a>
-    <a href="profile.html">Profilim</a>
-    <a href="index.html">Çıkış</a>
+  
+    <!-- Üst Menü -->
+    <header class="navbar">
+      <button class="sidebar-toggle" onclick="toggleSidebar()">
+        <i class="fas fa-bars"></i>
+      </button>
+      <div class="logo">ChefShare</div>
+      <input type="text" id="search-bar" placeholder="Search Recipes..." class="search-bar" onkeyup="searchRecipes()" />
+      <div class="nav-links">
+        <a href="add-recipes.html">Add Recipes</a>
+        <a href="profile.html">My Profile</a>
+        <a href="index.html">Log Out</a>
+      </div>
+    </header>
+
+    <!-- Sol Menü (Sidebar) -->
+<aside class="sidebar">
+  <nav class="side-nav">
+    <ul>
+      <li><a href="gallery.html"><i class="fas fa-images"></i> Gallery</a></li>
+      <li><a href="#"><i class="fas fa-file-alt"></i> My Recipes</a></li>
+    </ul>
+  </nav>
+</aside>
+
+
+    <!-- Ana İçerik -->
+    <main class="content" id="main-content">
+      <h1>Popular Recipes</h1>
+
+      <!-- Tarif Kartları -->
+      <div class="recipes-grid">
+        <div class="recipe-card">
+          <img src="https://cdn.ye-mek.net/App_UI/Img/out/650/2022/12/ev-koftesi-resimli-yemek-tarifi(11).jpg" alt="MeatBalls">
+          <h3>Mother Made MeatBalls</h3>
+          <p>Crispy and juicy homemade taste meatballs.</p>
+          <a href="#">See Recipe</a>
+        </div>
+        <div class="recipe-card">
+          <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR9L35WhAmJzgF_5PkATsf3oF02xreLlvLehg&s" alt="Pasta">
+          <h3>Pasta</h3>
+          <p>Recipe of delicious creamy pasta in 10 minutes!</p>
+          <a href="#">See Recipe</a>
+        </div>
+        <div class="recipe-card">
+          <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQT8HwkjE03Y1AEPAjHWOtZGWoAPrD1XRr6ag&s" alt="Salads">
+          <h3>Season Salad</h3>
+          <p>Recipe of healthy and freshing season salad.</p>
+          <a href="#">See Recipe</a>
+        </div>
+        <div class="recipe-card">
+          <img src="https://wowturkey.net/dosyalar/image-jpg.3660/" alt="Soups">
+          <h3>Mercimek Soup</h3>
+          <p>An indispensable flavor from Turkish kitchen!</p>
+          <a href="#">See Recipe</a>
+          </div>
+          <div class="recipe-card">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/c/c7/Baklava%281%29.png"alt="Deserts">
+            <h3>Baklava</h3>
+            <p>The desert that is the brand of the Türkiye.</p>
+            <a href="#">See Recipe</a>"
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+      <p>&copy; 2025 ChefShare. All Rights Reserved.</p>
+    </footer>
   </div>
-</header>
 
+  <script>
+    function toggleSidebar() {
 
-  <!-- Ana İçerik -->
-  <main class="content">
-    <h1>Popüler Tarifler</h1>
+      const sidebar = document.querySelector('.sidebar');
+      const content = document.querySelector('.content');
+      const footer = document.querySelector('.footer');
+      
+      sidebar.classList.toggle('active');
+      content.classList.toggle('sidebar-active');
+      footer.classList.toggle('sidebar-active');
+      }
 
-    <!-- Tarif Kartları -->
-    <div class="recipes-grid">
-      <div class="recipe-card">
-        <img src="https://cdn.ye-mek.net/App_UI/Img/out/650/2022/12/ev-koftesi-resimli-yemek-tarifi(11).jpg" alt="Köfte">
-        <h3>Anne Köftesi</h3>
-        <p>Dışı çıtır içi yumuşacık klasik ev köftesi.</p>
-        <a href="#">Tarifi Gör</a>
-      </div>
-      <div class="recipe-card">
-        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR9L35WhAmJzgF_5PkATsf3oF02xreLlvLehg&s" alt="Makarna">
-        <h3>Kremalı Makarna</h3>
-        <p>10 dakikada nefis kremalı makarna tarifi!</p>
-        <a href="#">Tarifi Gör</a>
-      </div>
-      <div class="recipe-card">
-        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQT8HwkjE03Y1AEPAjHWOtZGWoAPrD1XRr6ag&s" alt="Salata">
-        <h3>Mevsim Salatası</h3>
-        <p>Sağlıklı ve ferahlatıcı mevsim salatası tarifi.</p>
-        <a href="#">Tarifi Gör</a>
-      </div>
-      <div class="recipe-card">
-        <img src="https://wowturkey.net/dosyalar/image-jpg.3660/" alt="Çorbalar">
-        <h3>Mercimek Çorbası</h3>
-        <p>Klasik Türk mutfağının vazgeçilmezi!</p>
-        <a href="#">Tarifi Gör</a>
-      </div>
-    </div>
-  </main>
-
-  <!-- Footer -->
-  <footer class="footer">
-    <p>&copy; 2025 YemekTarifim. Tüm hakları saklıdır.</p>
-  </footer>
+    function searchRecipes() {
+      // Arama fonksiyonunuz buraya gelecek
+      const searchTerm = document.getElementById('search-bar').value.toLowerCase();
+      const recipeCards = document.querySelectorAll('.recipe-card');
+      
+      recipeCards.forEach(card => {
+        const title = card.querySelector('h3').textContent.toLowerCase();
+        const description = card.querySelector('p').textContent.toLowerCase();
+        
+        if (title.includes(searchTerm) || description.includes(searchTerm)) {
+          card.style.display = 'block';
+        } else {
+          card.style.display = 'none';
+        }
+      });
+    }
+  </script>
 </body>
 </html>
-
-
