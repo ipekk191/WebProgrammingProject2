@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tarif Ekle</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <header class="navbar">
+    <div class="logo">YemekTarifim</div>
+    <div class="nav-links">
+      <a href="index.html">Ana Sayfa</a>
+    </div>
+  </header>
+
+  <main class="content">
+    <h1>Tarif Ekle</h1>
+    
+    <form id="recipe-form" class="recipe-form">
+      <div class="form-group">
+        <label for="title">Tarif Başlığı</label>
+        <input type="text" id="title" name="title" required placeholder="Tarif başlığını girin">
+      </div>
+
+      <div class="form-group">
+        <label for="description">Tarif Açıklaması</label>
+        <textarea id="description" name="description" required placeholder="Tarifi açıklayın"></textarea>
+      </div>
+
+      <div class="form-group">
+        <label for="image">Tarif Fotoğrafı</label>
+        <input type="file" id="image" name="image" accept="image/*">
+      </div>
+
+      <div class="form-group">
+        <label for="ingredients">Malzemeler</label>
+        <textarea id="ingredients" name="ingredients" required placeholder="Malzemeleri listeleyin"></textarea>
+      </div>
+
+      <div class="form-group">
+        <label for="steps">Adım Adım Tarif</label>
+        <textarea id="steps" name="steps" required placeholder="Tarifi adım adım açıklayın"></textarea>
+      </div>
+
+      <div class="form-group">
+        <label for="duration">Yapım Süresi</label>
+        <input type="text" id="duration" name="duration" placeholder="Örn: 30 dakika" required>
+      </div>
+
+      <div class="form-group">
+        <label for="difficulty">Zorluk Derecesi</label>
+        <select id="difficulty" name="difficulty" required>
+          <option value="easy">Kolay</option>
+          <option value="medium">Orta</option>
+          <option value="hard">Zor</option>
+        </select>
+      </div>
+
+      <button type="submit" class="submit-btn">Tarifi Ekle</button>
+    </form>
+  </main>
+  <form action="/recipes" method="POST" id="tarif-form">
+  <input type="text" name="title" placeholder="Tarif Adı" required />
+  <textarea name="description" placeholder="Açıklama"></textarea>
+  <textarea name="ingredients" placeholder="Malzemeler (virgülle ayırın)"></textarea>
+  <textarea name="steps" placeholder="Yapılış adımları"></textarea>
+  <button type="submit">Tarif Ekle</button>
+</form>
+
+<script>
+document.getElementById('tarif-form').addEventListener('submit', async function(e) {
+  e.preventDefault();
+
+  const formData = new FormData(this);
+  const recipe = {
+    id: formData.get('title').toLowerCase().replace(/\s+/g, '-'),
+    title: formData.get('title'),
+    description: formData.get('description'),
+    ingredients: formData.get('ingredients').split(','),
+    steps: formData.get('steps').split('\n')
+  };
+
+  const response = await fetch('/recipes', {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json'
+    },
+    body: JSON.stringify(recipe)
+  });
+
+  const result = await response.json();
+  alert(result.message);
+});
+</script>
+
+
+  <footer class="footer">
+    <p>&copy; 2025 Yemek Sitesi. Tüm hakları saklıdır.</p>
+  </footer>
+
+  <script src="script.js"></script>
+
+</body>
+</html>
