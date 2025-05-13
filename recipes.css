@@ -7,14 +7,20 @@
 
 body {
   font-family: 'Poppins', sans-serif;
-  background: #121212; /* Koyu arka plan */
+  background: #050000; /* Koyu arka plan */
   color: #f1f1f1;
   height: 100vh;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
+ 
 }
-
+.container{
+  display:grid;
+  grid-template-areas:
+  "navbar navbar"
+  "sidebar main";
+  grid-template-columns:250ox 1fr;
+  grid-template-rows:70px 1fr;
+  min-height: 100vh;
+}
 h1 {
   text-align: center;
   font-size: 36px;
@@ -24,18 +30,38 @@ h1 {
 
 /* Navbar */
 .navbar {
+  grid-area:navbar;
   background: #1f1f1f;
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding: 15px 30px;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+  z-index:10;
 }
 
 .navbar .logo {
-  font-size: 30px;
+  font-size: 24px;
   font-weight: bold;
   color: #f44336;
+}
+.top-nav ul{
+  list-style:none;
+  display:flex;
+  margin:0;
+  padding:0;
+}
+.top-nav li{
+  margin: 0 15px;
+}
+.top-nav a{
+  color:#f1f1f1;
+  text-decoration:none;
+  font-weight:500;
+  transition:color 0.3s ease;
+}
+.top-nav a:hover{
+  color:#f44336;
 }
 
 .search-container {
@@ -43,13 +69,13 @@ h1 {
 }
 
 .search-bar {
-  padding: 10px;
+  padding: 10px 15px;
   border-radius: 20px;
   border: 1px solid #444;
   background: #333;
   color: white;
-  font-size: 16px;
-  width: 300px;
+  font-size: 14px;
+  width: 250px;
   transition: all 0.3s ease;
 }
 
@@ -62,14 +88,47 @@ h1 {
   background: #444;
   border-color: #f44336;
 }
+.sidebar{
+  grid-area:sidebar;
+  background:#1e1e1e;
+  padding:20px 0;
+  box-shadow:4px 0 6px rgba(0,0,0,0.2);
+}
+.side-nav ul{
+  list-style:none;
+  padding:0;
+  margin:0;
 
+}
+.side-nav li{
+  padding:12px 25px;
+  transition: background-color 0.3 ease;
+}
+.side-nav a{
+  color:#f1f1f1;
+  text-decoration:none;
+  display:block;
+  font-size: 16px;
+}
+.side-nav li:hover{
+  background-color:#333;
+
+}
+.side-nav li:hover a{
+  color:#f44336;
+}
+.main-content{
+  grid-area:main;
+  padding:30px;
+  background:#121212;
+  overflow-y:auto;
+}
 /* Tariflerin Listelendiği Alan */
 .recipes-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 20px;
-  padding: 0 30px;
-  margin-top: 40px;
+  gap: 25px;
+  margin-top: 30px;
 }
 
 /* Tarif Kartları */
@@ -90,7 +149,7 @@ h1 {
 
 .recipe-card img {
   width: 100%;
-  height: 200px;
+  height: 180px;
   object-fit: cover;
   border-radius: 10px;
   transition: all 0.3s ease;
@@ -101,25 +160,26 @@ h1 {
 }
 
 .recipe-card h3 {
-  font-size: 22px;
+  font-size: 20px;
   margin: 15px 0;
   color: #f44336;
 }
 
 .recipe-card p {
-  font-size: 16px;
+  font-size: 14px;
   color: #bbb;
+  margin-bottom:15px;
 }
 
 .recipe-card a {
   display: inline-block;
-  margin-top: 15px;
-  padding: 10px 20px;
+  padding: 8px 20px;
   background-color: #2f9cf4;
   color: white;
   text-decoration: none;
   border-radius: 25px;
-  font-weight: bold;
+  font-weight: 500;
+  font-size:14px;
   transition: background-color 0.3s ease;
 }
 
@@ -129,9 +189,10 @@ h1 {
 
 /* Footer */
 .footer {
+  grid-column:1/-1;
   background: #1f1f1f;
   padding: 20px;
   text-align: center;
   color: #bbb;
-  margin-top: 50px;
+  margin-top: auto;
 }
