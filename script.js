@@ -89,3 +89,16 @@ document.getElementById('registerForm').addEventListener('submit', async (e) => 
   
   // Sayfa yüklendiğinde tarifleri getir
   window.addEventListener('DOMContentLoaded', loadRecipes);
+// script.js en alt kısmına bu kodu ekleyin:
+document.addEventListener('DOMContentLoaded', function() {
+    // Tüm kodunuzu bu içeriye taşıyın
+    const loginForm = document.getElementById('loginForm');
+    if(loginForm) {
+        loginForm.addEventListener('submit', function(e) {
+            e.preventDefault();
+            // Login işlemleri
+        });
+    } else {
+        console.error('Login formu bulunamadı!');
+    }
+});
