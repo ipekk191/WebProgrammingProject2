@@ -27,9 +27,15 @@ body {
   }
   
   .login-title {
-    margin-bottom: 40px;
-    font-size: 40px;
+    margin-bottom: 20px;
+    font-size: 50px;
+    color: #ccc;
   }  
+  .title {
+    margin-bottom: 20px;
+    font-size: 70px;
+    color: bisque;
+  } 
   .input-box {
     margin: 20px 0;
     position: relative;  
@@ -91,17 +97,17 @@ body {
    .login-btn{
     width: 100%;
     padding: 10px 0;
-    background: #f42f40;
+    background: #2f9cf4;
     border: none;
     border-radius: 99px;
-    color:#000000;
+    color:#ccc;
     font-size: 16px;
     font-weight: 600;
     cursor: pointer;
     transition: 0.3s;
   }
   .login-btn:hover{
-   background: #a33939;
+   background: #12502e;
   }
   .register a{
     color:#ccc;
@@ -110,4 +116,7 @@ body {
   }
   .register a:hover{
     text-decoration: underline;
+  }
+  .register{
+    color: rgb(205, 171, 121);
   }
