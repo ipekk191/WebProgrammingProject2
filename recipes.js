@@ -70,3 +70,17 @@ fetch('/tarifler.json')
       container.appendChild(card);
     });
   });
+const fs = require('fs');
+const path = require('path');
+
+app.get('/tarif-detay', (req, res) => {
+  const recipeId = req.query.id;
+  const recipes = JSON.parse(fs.readFileSync('recipes.json', 'utf8'));
+  const recipe = recipes.find(r => r.id === recipeId);
+
+  if (recipe) {
+    res.render('tarif-detay', { recipe });
+  } else {
+    res.status(404).send('Tarif bulunamadı');
+  }
+});
