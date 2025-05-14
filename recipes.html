@@ -6,6 +6,7 @@
   <title>Food Recipes</title>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
   <link rel="stylesheet" href="recipes.css" />
   <style>
     /* Temel Ayarlar */
@@ -249,10 +250,9 @@
       <div class="logo">ChefShare</div>
       <input type="text" id="search-bar" placeholder="Search Recipes..." class="search-bar" onkeyup="searchRecipes()" />
       <div class="nav-links">
-        <a href="add-recipes.html">Add Recipes</a>
-        <a href="profile.html">My Profile</a>
-        <a href="index.html">Log Out</a>
-      </div>
+      <a href="tarif-ekle.html"><i class="fas fa-plus"></i> Add Recipes</a>
+      <a href="profile.html">My Profile</a>
+      <a href="index.html">Log Out</a>
     </header>
 
     <!-- Sol Menü (Sidebar) -->
@@ -260,7 +260,9 @@
   <nav class="side-nav">
     <ul>
       <li><a href="gallery.html"><i class="fas fa-images"></i> Gallery</a></li>
-      <li><a href="#"><i class="fas fa-file-alt"></i> My Recipes</a></li>
+      <li><a href="my-recipes.html"><i class="fas fa-file-alt"></i> My Recipes</a></li>
+      <li><a href="about.html"><i class="fas fa-info-circle"></i> About Us</a></li>
+      <li><a href="https://www.youtube.com/@NefisYemekTarifleri" target="_blank"><i class="fab fa-youtube"></i> Our YouTube Channel</a></li>
     </ul>
   </nav>
 </aside>
@@ -276,31 +278,33 @@
           <img src="https://cdn.ye-mek.net/App_UI/Img/out/650/2022/12/ev-koftesi-resimli-yemek-tarifi(11).jpg" alt="MeatBalls">
           <h3>Mother Made MeatBalls</h3>
           <p>Crispy and juicy homemade taste meatballs.</p>
-          <a href="#">See Recipe</a>
+          <a href="tarif-detay?id=anne-koftesi" class="see-recipe-btn">See Recipe</a>
+          
+
         </div>
         <div class="recipe-card">
           <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR9L35WhAmJzgF_5PkATsf3oF02xreLlvLehg&s" alt="Pasta">
           <h3>Pasta</h3>
           <p>Recipe of delicious creamy pasta in 10 minutes!</p>
-          <a href="#">See Recipe</a>
+          <a href="tarif-detay?id=kremali -makarna">See Recipe</a>
         </div>
         <div class="recipe-card">
           <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQT8HwkjE03Y1AEPAjHWOtZGWoAPrD1XRr6ag&s" alt="Salads">
           <h3>Season Salad</h3>
           <p>Recipe of healthy and freshing season salad.</p>
-          <a href="#">See Recipe</a>
+          <a href="tarif-detay?id=mevsim-salatasi">See Recipe</a>
         </div>
         <div class="recipe-card">
           <img src="https://wowturkey.net/dosyalar/image-jpg.3660/" alt="Soups">
           <h3>Mercimek Soup</h3>
           <p>An indispensable flavor from Turkish kitchen!</p>
-          <a href="#">See Recipe</a>
+         <a href="tarif-detay?id=mercimek-corbasi">See Recipe</a>
           </div>
           <div class="recipe-card">
             <img src="https://upload.wikimedia.org/wikipedia/commons/c/c7/Baklava%281%29.png"alt="Deserts">
             <h3>Baklava</h3>
             <p>The desert that is the brand of the Türkiye.</p>
-            <a href="#">See Recipe</a>"
+            <a href="tarif-detay?id=desert">See Recipe</a>
           </div>
         </div>
       </div>
