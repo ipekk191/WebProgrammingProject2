@@ -2,34 +2,104 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Profilim</title>
-  <link rel="stylesheet" href="recipes.css" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="profile.css"/>
 </head>
 <body>
-  <!-- Üst Menü -->
-  <header class="navbar">
-    <div class="logo">YemekTarifim</div>
-    <div class="nav-links">
-      <a href="recipes.html">Anasayfa</a>
-      <a href="#">Profilim</a>
-      <a href="index.html">Çıkış</a>
-    </div>
-  </header>
-
-  <!-- Profil İçeriği -->
   <main class="content">
-    <h1>Profilim</h1>
-    <div class="profile">
-      <img src="images/profil-resmi.jpg" alt="Profil Resmi" />
-      <h3>Ahmet Yılmaz</h3>
-      <p>Email: ahmet@example.com</p>
-      <button id="editProfile">Profili Düzenle</button>
-    </div>
+    <section class="profile-card">
+      <img id="profile-img" src="images/profil-resmi.jpg" alt="Profil Resmi" />
+      <div class="profile-info">
+        <h2 id="profile-name">Ahmet Yılmaz</h2>
+        <p id="profile-email">Email: ahmet@example.com</p>
+        <button id="editProfile" class="btn primary">Profili Düzenle</button>
+      </div>
+    </section>
+  
+    <section class="edit-profile-form" id="editProfileForm">
+      <h3>Profili Düzenle</h3>
+      <input type="text" id="newProfileName" placeholder="Yeni İsim" />
+      <input type="email" id="newProfileEmail" placeholder="Yeni Email" />
+      <input type="text" id="newProfileImg" placeholder="Yeni Profil Resmi URL'si" />
+      <button id="saveProfile" class="btn success">Kaydet</button>
+    </section>
+  
+    <section class="recipe-form-section">
+      <h2>Yeni Tarif Ekle</h2>
+      <form id="addRecipeForm" class="recipe-form">
+        <input type="text" id="recipeName" placeholder="Tarif Adı" required />
+        <input type="text" id="recipeImage" placeholder="Görsel URL'si" required />
+        <textarea id="recipeDesc" placeholder="Açıklama" required></textarea>
+        <button type="submit" class="btn">Tarif Ekle</button>
+      </form>
+    </section>
+  
+    <section class="recipes-section">
+      <h2>Tariflerim</h2>
+      <div id="user-recipes" class="recipes-grid">
+        <!-- Tarif kartları burada listelenecek -->
+      </div>
+    </section>
   </main>
 
-  <!-- Footer -->
-  <footer class="footer">
-    <p>&copy; 2025 YemekTarifim. Tüm hakları saklıdır.</p>
-  </footer>
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      const addRecipeForm = document.getElementById('addRecipeForm');
+      const userRecipes = document.getElementById('user-recipes');
+
+      // Tarif ekleme formunu dinle
+      addRecipeForm.addEventListener('submit', function(e) {
+        e.preventDefault();
+        
+        // Form değerlerini al
+        const recipeName = document.getElementById('recipeName').value;
+        const recipeImage = document.getElementById('recipeImage').value;
+        const recipeDesc = document.getElementById('recipeDesc').value;
+        
+        // Yeni tarif kartı oluştur
+        const recipeCard = document.createElement('div');
+        recipeCard.className = 'recipe-card';
+        recipeCard.innerHTML = `
+          <img src="${recipeImage}" alt="${recipeName}" />
+          <h3>${recipeName}</h3>
+          <p>${recipeDesc}</p>
+          <button class="btn delete-recipe">Sil</button>
+        `;
+        
+        // Tarifleri listesine ekle
+        userRecipes.appendChild(recipeCard);
+        
+        // Formu temizle
+        addRecipeForm.reset();
+        
+        // Sil butonuna event listener ekle
+        recipeCard.querySelector('.delete-recipe').addEventListener('click', function() {
+          recipeCard.remove();
+        });
+      });
+
+      // Profil düzenleme işlevselliği (isteğe bağlı)
+      const editProfileBtn = document.getElementById('editProfile');
+      const editProfileForm = document.getElementById('editProfileForm');
+      const saveProfileBtn = document.getElementById('saveProfile');
+      
+      editProfileBtn.addEventListener('click', function() {
+        editProfileForm.style.display = editProfileForm.style.display === 'block' ? 'none' : 'block';
+      });
+      
+      saveProfileBtn.addEventListener('click', function() {
+        const newName = document.getElementById('newProfileName').value;
+        const newEmail = document.getElementById('newProfileEmail').value;
+        const newImg = document.getElementById('newProfileImg').value;
+        
+        if (newName) document.getElementById('profile-name').textContent = newName;
+        if (newEmail) document.getElementById('profile-email').textContent = `Email: ${newEmail}`;
+        if (newImg) document.getElementById('profile-img').src = newImg;
+        
+        editProfileForm.style.display = 'none';
+      });
+    });
+  </script>
 </body>
 </html>
