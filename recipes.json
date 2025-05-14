@@ -1,89 +1,112 @@
 [
-    {
-      "id": "anne-koftesi",
-      "ad": "Anne Köftesi",
-      "gorsel": "https://cdn.ye-mek.net/App_UI/Img/out/650/2022/12/ev-koftesi-resimli-yemek-tarifi(11).jpg",
-      "malzemeler": [
-        "500g kıyma",
-        "1 soğan",
-        "1 yumurta",
-        "1 çay bardağı galeta unu",
-        "Tuz, karabiber"
-      ],
-      "yapilis": "Tüm malzemeleri yoğur, şekil ver, yağda kızart."
-    },
-    {
-      "id": "kremali-makarna",
-      "ad": "Kremalı Makarna",
-      "gorsel": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR9L35WhAmJzgF_5PkATsf3oF02xreLlvLehg&s",
-      "malzemeler": [
-        "1 paket makarna (penne veya spagetti)",
-        "1 su bardağı krema",
-        "2 yemek kaşığı tereyağı",
-        "1 diş sarımsak (ezilmiş)",
-        "Yarım su bardağı rendelenmiş kaşar peyniri",
-        "Tuz",
-        "Karabiber"
-      ],
-      "yapilis": [
-        "Makarnayı bol tuzlu suda haşlayın ve süzün.",
-        "Tereyağını tavada eritin, ezilmiş sarımsağı ekleyip 1 dakika kavurun.",
-        "Kremayı ekleyip kısık ateşte birkaç dakika ısıtın.",
-        "Haşlanmış makarnayı kremaya ekleyin ve güzelce karıştırın.",
-        "Kaşar peyniri, tuz ve karabiber ekleyip 1-2 dakika daha pişirin.",
-        "Sıcak servis yapın."
-      ]
-    },
-    {
-      "id": "mevsim-salatasi",
-      "ad": "Mevsim Salatası",
-      "gorsel": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQT8HwkjE03Y1AEPAjHWOtZGWoAPrD1XRr6ag&s",
-      "malzemeler": [
-        "1 adet havuç (rendelenmiş)",
-        "1 adet salatalık",
-        "4-5 yaprak marul",
-        "1 adet domates",
-        "1 adet yeşil biber",
-        "Yarım limonun suyu",
-        "2 yemek kaşığı zeytinyağı",
-        "Tuz"
-      ],
-      "yapilis": [
-        "Tüm sebzeleri bol su ile yıkayıp doğrayın.",
-        "Marulu ince ince doğrayın, havucu rendeleyin.",
-        "Derin bir kasede tüm sebzeleri karıştırın.",
-        "Üzerine zeytinyağı, limon suyu ve tuz ekleyip karıştırın.",
-        "Soğuk servis yapın."
-      ]
-    },
-    {
-      "id": "mercimek-corbasi",
-      "ad": "Mercimek Çorbası",
-      "gorsel": "https://wowturkey.net/dosyalar/image-jpg.3660/",
-      "malzemeler": [
-        "1 su bardağı kırmızı mercimek",
-        "1 adet soğan",
-        "1 adet havuç",
-        "1 yemek kaşığı salça",
-        "2 yemek kaşığı sıvı yağ",
-        "6 su bardağı su (veya et suyu)",
-        "Tuz",
-        "Karabiber",
-        "Pul biber"
-      ],
-      "yapilis": [
-        "Soğanı ve havucu doğrayıp sıvı yağda kavurun.",
-        "Salçayı ekleyip birkaç dakika kavurmaya devam edin.",
-        "Mercimeği yıkayıp ekleyin ve karıştırın.",
-        "Üzerine suyu ekleyip kaynamaya bırakın.",
-        "Mercimek ve sebzeler yumuşayınca blenderdan geçirin.",
-        "Tuz ve baharatları ekleyip birkaç dakika daha kaynatın.",
-        "Sıcak servis yapın, üzerine tereyağlı pul biber dökebilirsiniz."
-      ]
-    }
-    
-    
-    
-    
-  ]
+  {
+    "id": "anne-koftesi",
+    "ad": "Mother's Meatballs",
+    "gorsel": "https://cdn.ye-mek.net/App_UI/Img/out/650/2022/12/ev-koftesi-resimli-yemek-tarifi(11).jpg",
+    "malzemeler": [
+      "500g minced meat",
+      "1 onion",
+      "1 egg",
+      "1 teacup of breadcrumbs",
+      "Salt, black pepper"
+    ],
+    "yapilis": "Mix all ingredients, shape the mixture, and fry in oil."
+  },
+  {
+    "id": "kremali-makarna",
+    "ad": "Creamy Pasta",
+    "gorsel": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR9L35WhAmJzgF_5PkATsf3oF02xreLlvLehg&s",
+    "malzemeler": [
+      "1 packet of pasta (penne or spaghetti)",
+      "1 cup of cream",
+      "2 tablespoons of butter",
+      "1 garlic clove (crushed)",
+      "Half a cup of grated cheddar cheese",
+      "Salt",
+      "Black pepper"
+    ],
+    "yapilis": [
+      "Boil the pasta in salted water and drain it.",
+      "Melt the butter in a pan, add the crushed garlic and sauté for 1 minute.",
+      "Add the cream and heat it over low heat for a few minutes.",
+      "Add the boiled pasta to the cream and mix well.",
+      "Add the grated cheddar cheese, salt, and black pepper, and cook for 1-2 more minutes.",
+      "Serve hot."
+    ]
+  },
+  {
+    "id": "mevsim-salatasi",
+    "ad": "Seasonal Salad",
+    "gorsel": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQT8HwkjE03Y1AEPAjHWOtZGWoAPrD1XRr6ag&s",
+    "malzemeler": [
+      "1 carrot (grated)",
+      "1 cucumber",
+      "4-5 lettuce leaves",
+      "1 tomato",
+      "1 green pepper",
+      "Juice of half a lemon",
+      "2 tablespoons of olive oil",
+      "Salt"
+    ],
+    "yapilis": [
+      "Wash all vegetables thoroughly with water and chop them.",
+      "Finely chop the lettuce and grate the carrot.",
+      "Mix all the vegetables in a large bowl.",
+      "Add olive oil, lemon juice, and salt, and mix well.",
+      "Serve cold."
+    ]
+  },
+  {
+    "id": "mercimek-corbasi",
+    "ad": "Lentil Soup",
+    "gorsel": "https://wowturkey.net/dosyalar/image-jpg.3660/",
+    "malzemeler": [
+      "1 cup of red lentils",
+      "1 onion",
+      "1 carrot",
+      "1 tablespoon of tomato paste",
+      "2 tablespoons of vegetable oil",
+      "6 cups of water (or meat broth)",
+      "Salt",
+      "Black pepper",
+      "Red pepper flakes"
+    ],
+    "yapilis": [
+      "Chop the onion and carrot, and sauté them in vegetable oil.",
+      "Add the tomato paste and continue sautéing for a few more minutes.",
+      "Wash the lentils and add them to the pan, stir well.",
+      "Add the water and bring to a boil.",
+      "Once the lentils and vegetables are soft, blend the soup.",
+      "Add salt and spices, and boil for a few more minutes.",
+      "Serve hot, optionally with melted butter and red pepper flakes on top."
+    ]
+  },
+  {
+
   
+    "id": "baklava",
+    "ad": "Baklava",
+    "gorsel": "https://wowturkey.net/dosyalar/image-jpg.3660/",
+    "malzemeler": [
+      "2 cups of phyllo dough",
+      "2 cups of walnuts or pistachios (chopped)",
+      "1 cup of melted butter",
+      "1 cup of sugar",
+      "1 cup of water",
+      "2 tablespoons of lemon juice",
+      "1 tablespoon of honey (optional)",
+      "Ground cinnamon (optional)"
+    ],
+    "yapilis": [
+        "Preheat the oven to 350°F (175°C).",
+        "Brush a baking dish with melted butter. Lay down the first layer of phyllo dough and brush with more butter. Repeat for 10-12 layers.",
+        "Evenly spread the chopped walnuts or pistachios on top of the layered phyllo dough.",
+        "Continue layering the phyllo dough and butter, alternating with layers of nuts, until all ingredients are used.",
+        "Cut the baklava into diamond or square shapes before baking.",
+        "Bake in the preheated oven for 45-50 minutes, or until golden brown and crisp.",
+        "While the baklava is baking, prepare the syrup: Combine sugar, water, and lemon juice in a saucepan. Bring to a boil and simmer for 10 minutes. Add honey if desired.",
+        "Once the baklava is done, remove it from the oven and immediately pour the hot syrup over the hot baklava. Let it soak for at least 4 hours.",
+        "Serve and enjoy your homemade baklava!"
+    ]
+    }
+]
